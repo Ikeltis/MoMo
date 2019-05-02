@@ -40,7 +40,6 @@ async def visit_once(url: str, proxy: str, semaphore: asyncio.Semaphore, timeout
 def visit_count(url: str, count: int=40, max_concurrency: int=40) -> None:
     successful_count = 0
     used_proxies = set()
-    proxies = get_proxy_list()
     
     loop = asyncio.get_event_loop()
     sem = asyncio.Semaphore(max_concurrency)
